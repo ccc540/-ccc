@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function range(started, end) {
+      const arr = []
+      for (let i = started; i <= end; i++) {
+        arr.push(i);
+      }
+      return arr;
+    }
+    function sum(num) {
+      let num1 = 0;
+      for (let i = 0; i < num.length; i++) {
+        num1 = num1 + num[i];
+
+      }
+      return num1;
+    }
+    console.log(sum(range(1, 10)));
+    console.log((range(1, 10)));
+
+
+
+  </script>
+</body>
+
+</html>

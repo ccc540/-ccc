@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let st = prompt('请输入一串字符串')
+    // let num = 0
+    // function countBs(st) {
+    //   for (let i = 0; i < st.length; i++) {
+    //     if (st[i] === 'B') {
+    //       num++
+    //     }
+    //   }
+    //   return num
+    // }
+    // console.log(countBs(st));
+    let st = prompt('请输入一串字符串')
+    let char = st[2]
+    let num = 0
+    function countchar(st, char) {
+      for (let i = 0; i < st.length; i++) {
+        if (st[i] === char) {
+          num++
+        }
+      }
+      return num
+    }
+    console.log(countchar(st, char));
+
+  </script>
+</body>
+
+</html>
