@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function deepEqual(a, b) {
+      if (a === b) {
+        return true;
+      }
+      if (a === null || b === null) {
+        return false
+      }
+      const typeA = typeof a;
+      const typeB = typeof b;
+      if (typeA !== 'object' || typeB !== 'object') {
+        return false
+      }
+      const keysA = Object.keys(a)
+      const keysB = Object.keys(b)
+      if (keysA.length !== keysB.length) {
+        return false
+      }
+      for (const key of keysA) {
+        if (!keysB.includes(key) || !deepEqual(a[key], b[key])) {
+          return false;
+        }
+      }
+      return true
+    }
+  </script>
+</body>
+
+</html>

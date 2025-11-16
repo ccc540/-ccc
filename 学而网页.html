@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .top {
+      margin: 0px auto;
+      padding: 10px 0px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      width: 2000px;
+      position: fixed;
+      z-index: 1;
+      left: -150px;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .top img {
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      overflow: hidden;
+      vertical-align: center;
+    }
+
+    #one {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    #one span {
+      font-size: larger;
+      color: aquamarine;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .search input {
+      padding: 8px 12px;
+      border: none;
+      outline: none;
+      flex: 1;
+    }
+
+    .search button {
+      padding: 8px 12px;
+      background-color: #fff;
+      border: none;
+      border-left: 1px solid #e0e0e0;
+      cursor: pointer;
+      color: red;
+    }
+
+    .search button::before {
+      content: 🔍;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .change:hover {
+      color: red;
+    }
+
+    #two {
+      background-color: rgb(35, 186, 176);
+      height: 20px;
+      width: 100px;
+    }
+
+    .tupian {
+      position: absolute;
+      left: 300px;
+      margin-top: 50px;
+    }
+
+    .section {
+      padding: 20px;
+      margin: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px;
+      position: absolute;
+      top: 390px;
+      left: 280px;
+      width: 950px;
+
+    }
+
+    .big {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .item {
+      text-align: center;
+    }
+
+    .item .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #2A9D8F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #2A9D8F;
+      margin: 0 auto 10px;
+    }
+
+    .item ul {
+      font-size: 14px;
+      list-style: none;
+    }
+
+    .item ul li:hover {
+      color: red;
+    }
+
+    .item .bt {
+      width: 20px;
+      height: 20px;
+      border: 1px solid hsl(101, 66%, 55%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #999;
+      margin: 10px auto 0;
+      cursor: pointer;
+    }
+
+    .three {
+      padding: 20px;
+      margin: 0 20px 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px;
+      position: absolute;
+      width: 950px;
+      left: -20px;
+      top: 300px;
+    }
+
+    .three .title {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    .three .title1 {
+      color: aqua;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .three1 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 60px);
+      gap: 0px;
+      align-items: center;
+    }
+
+    .three2 {
+      border: 1px solid #DDD;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      border: 2px solid greenyellow;
+    }
+
+    .three .num {
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+    }
+
+    /* 猜你喜欢 */
+    .tuijian {
+      background-color: #FFFFFF;
+      padding: 20px;
+      margin: 0 20px 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px;
+      position: absolute;
+      top: 550px;
+      width: 950px;
+      left: -20px;
+    }
+
+    .tuijian .juzi1 {
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    .tuijian .juzi2 {
+      text-align: center;
+      font-size: 10px;
+      margin-bottom: 20px;
+      color: aqua;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      width: 120px;
+      height: 80px;
+      background-color: rgb(189, 70, 70);
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 14px;
+      overflow: hidden;
+      transition: all 0.3s;
+
+
+
+    }
+
+    .card .teacher {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .footer {
+      background-color: #a3a3a3;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 15px;
+      font-size: 12px;
+      position: absolute;
+      top: 800px;
+      left: -400px;
+      width: 1800px;
+    }
+
+    .icon:hover {
+      background-color: greenyellow;
+      color: #fff;
+    }
+
+    .three4 {
+      border: none;
+    }
+
+    .card:hover {
+      background-color: #e81a1a;
+      color: #fff;
+    }
+
+    .card::before {
+      content: "";
+      height: 40px;
+      width: 80px;
+      position: absolute;
+      top: -40px;
+      overflow: hidden;
+      transform-origin: bottom;
+      transform: scaleY(0);
+      transition: all 0.5s ease-in-out;
+      background-image: url(/download.png);
+      background-size: cover;
+      z-index: 8;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <div class="top">
+    <div class="container">
+      <div id="one">
+        <img src="/学而.jpeg" alt="标志">
+        <span>学而</span>
+      </div>
+      <span class="change">首页</span>
+      <span class="change">分类查看</span>
+      <div class="search">
+        <input type="text" placeholder="请输入搜索内容">
+        <button type="button">搜索</button>
+      </div>
+      <img src="/用户.jpeg" alt="user">
+      <button id="two">退出</button>
+    </div>
+  </div>
+  <div class="tupian">
+    <img src="/banner.png" alt="banner">
+  </div>
+  <!-- 分类 -->
+  <div class="section">
+    <div class="big">
+      <div class="item">
+        <div class="icon">公</div>
+        <ul>
+          <li>界面与设计应用</li>
+          <li>房子</li>
+          <li>java程序编程</li>
+          <li>赵三金</li>
+          <li>设计师的自我修养</li>
+          <li>分享课程</li>
+        </ul>
+        <div class="bt">+</div>
+
+      </div>
+      <div class="item">
+        <div class="icon">通</div>
+        <ul>
+          <li>计算机基础</li>
+          <li>胡微</li>
+          <li>植物观赏学基础</li>
+          <li>韩一伟</li>
+          <li>生活常识</li>
+          <li>分享</li>
+        </ul>
+        <div class="bt">+</div>
+      </div>
+      <div class="item">
+        <div class="icon">素</div>
+        <ul>
+          <li>新生引导课</li>
+          <li>开学</li>
+          <li>党课精神研讨课</li>
+          <li>分享课程</li>
+          <li>专业方向</li>
+          <li>毕业生</li>
+        </ul>
+        <div class="bt">+</div>
+
+      </div>
+      <div class="item">
+        <div class="icon">专</div>
+        <ul>
+          <li>影视广告摄影基础</li>
+          <li>分享课程</li>
+          <li>程序员的养成</li>
+          <li>赵多金</li>
+          <li>如何让设计师改稿</li>
+          <li>甲方</li>
+        </ul>
+        <div class="bt">+</div>
+      </div>
+    </div>
+    <!-- 交叉部分 -->
+    <div class="three">
+      <div class="title">最热课程动态</div>
+      <div class="title1">精心为您推荐口碑课程排行NO.1-No.5</div>
+      <div class="three1">
+        <div class="three2">
+          <div>常勇</div>
+          <div>《化学生活》</div>
+        </div>
+        <div class="three2 three4">
+          <div class="num">02</div>
+        </div>
+        <div class="three2">
+          <div>张勇</div>
+          <div>《java语言程序设计》</div>
+        </div>
+        <div class="three2 three4">
+          <div class="num">04</div>
+        </div>
+        <div class="three2">
+          <div>张国</div>
+          <div>《计算机基础》</div>
+        </div>
+        <div class="three2 three4">
+          <div class="num">01</div>
+        </div>
+        <div class="three2">
+          <div>李达</div>
+          <div>《大学生语文》</div>
+        </div>
+        <div class="three2 three4">
+          <div class="num">03</div>
+        </div>
+        <div class="three2">
+          <div>苏燕</div>
+          <div>《视觉语言》</div>
+        </div>
+        <div class="three2 three4">
+          <div class="num">05</div>
+        </div>
+      </div>
+    </div>
+    <!-- 猜你喜欢 -->
+    <div class="tuijian">
+      <div class="juzi1">猜你喜欢课程</div>
+      <div class="juzi2">根据您的浏览记录,推荐相似课程列表</div>
+      <div class="box">
+        <div class="card">
+          <div>毛泽东思想</div>
+          <div class="teacher">赵三金</div>
+        </div>
+
+        <div class="card">
+          <div>邓小平理论</div>
+          <div class="teacher">胡一微</div>
+        </div>
+
+        <div class="card">
+          <div>《科学发展观》</div>
+          <div class="teacher">梁非凡</div>
+        </div>
+
+        <div class="card">
+          <div>《三个代表》</div>
+          <div class="teacher">韩一尾</div>
+        </div>
+
+      </div>
+    </div>
+    <!-- 底部版权 -->
+    <div class="footer">
+      <img class="hover-img" src="/footer.png" alt="logo">
+      <div>MUXI STUDIO| 华中师范大学</div>
+    </div>
+</body>
+
+</html>
